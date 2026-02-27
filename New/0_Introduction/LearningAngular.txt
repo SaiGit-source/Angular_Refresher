@@ -1,0 +1,4 @@
+Learning Angular
+
+Create a Frontend for a core sign-up system
+
