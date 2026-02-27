@@ -13,6 +13,26 @@ h3{
     margin: 0 0 10px 0;
 }
 
+.special-offer {
+    margin-top: 10px;
+    padding: 0.5rem;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.sale-banner {
+    color: #fff;
+    font-weight: bold;
+    background-color: #0abf46;
+    width: 100%;
+    padding: 0.75rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
 button {
     padding: 0.5rem 1rem;
     background-color: #007bff;

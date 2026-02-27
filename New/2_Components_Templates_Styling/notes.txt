@@ -42,8 +42,31 @@ Property binding: Allows us to set properties of HTML elements or directives bas
 Instructions for specific parts of the view based on what's happening in the component
 [property]="expression". it could be a property in the 'ts' file
 
+Event binding: allows view to respond to user actions like clicks by triggering methods in the TypeScript class of the component.
+Syntax: (event)="handler". handler is the function in the TypeScript. No need to add event listeners manually unlike JavaScript
+Angular simplifies the process with the declarative syntax in the HTML file
+
+Styling in Angular can be done both globally and per component. Each component has its own CSS file  
+for global styling, we add in styles.css. when we add something in styles.css, it is affecting the entire application
+
+Components in Angular have a lifecycle managed by Angular itself. You dont create components but Angular does. Lifecycle hooks are special methods that allow us to tap into key moments in a component's existence
+such as Intialization and Destruction. One of the most commonly used lifecycle hooks is 'ngOnInit'. it is called once the component is Initialized, making it the perfect place to fetch data or perform setup tasks
+ngOnInit runs after the component's constructor and after Angular has setup its inputs.
+
+Use cases for ngOnInit
+- Fetching data from a service
+- Initializing default values
+- Setting up subscriptions
+
+to use ngOnInit, we need to implement : export class CoursesList implements OnInit 
 
 
+Code blocks: we can use code blocks to create Dynamic views. 
+
+
+Pipes in Angular: Data transformers that format data before displaying it in the view. they make templates clearner and data presentation more consistent
+Two common pipes: data pipe and currency pipe  {{course.date | date:'mediumDate'}}
+We can create Custom pipes also, allows to encapsulate complex logic into reusable components
 
 
 

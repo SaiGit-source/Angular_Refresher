@@ -16,13 +16,20 @@
     <button>View Details</button>
 </div>
 -->
+<!-- this is still hard-coded, we are going to use for loop instead -->
 
+<!-- 
 <div class="course-item">
     <h3>{{courses[0].name}}</h3>
     <p>{{courses[0].description}}</p>
     <p>${{courses[0].price}}</p>
     <p>{{courses[0].date | date}}</p>
-    <button>View Details</button>
+    <p [hidden]="!courses[0].soldOut">Sold Out</p>  Property binding 
+    <img [ngStyle]="{'border': courses[0].soldOut ? '2px solid red' : 'none'}" [src]="courses[0].img" alt="{{courses[0].name}}" width="100">
+    @if (courses[0].price < 140) {
+        <div class="special-offer">Special Offer!</div>
+    }
+    <button (click)="viewDetails(courses[0].name)">View Details</button> Event binding 
 </div>
 
 
@@ -31,7 +38,12 @@
     <p>{{courses[1].description}}</p>
     <p>${{courses[1].price}}</p>
     <p>{{courses[1].date | date}}</p>
-    <button>View Details</button>
+    <p [hidden]="!courses[1].soldOut">Sold Out</p>
+    <img [ngStyle]="{'border': courses[1].soldOut ? '2px solid red' : 'none'}" [src]="courses[1].img" alt="{{courses[1].name}}" width="100">
+    @if (courses[1].price < 140) {
+        <div class="special-offer">Special Offer!</div>
+    }
+    <button (click)="viewDetails(courses[1].name)">View Details</button>
 </div>
 
 <div class="course-item">
@@ -39,5 +51,29 @@
     <p>{{courses[2].description}}</p>
     <p>${{courses[2].price}}</p>
     <p>{{courses[2].date | date}}</p>
-    <button>View Details</button>
+    <p [hidden]="!courses[2].soldOut">Sold Out</p>
+    <img [ngStyle]="{'border': courses[2].soldOut ? '2px solid red' : 'none'}" [src]="courses[2].img" alt="{{courses[2].name}}" width="100">
+    @if (courses[2].price < 140) {
+        <div class="special-offer">Special Offer!</div>
+    }
+    <button (click)="viewDetails(courses[2].name)">View Details</button>
 </div>
+ -->
+
+@for(course of courses; track course.id){
+    <div class="course-item">
+        <h3>{{course.name}}</h3>
+        <p>{{course.description}}</p>
+        <p>{{course.price | currency:'USD'}}</p> <!-- Using currency pipe to format price -->
+        <p>{{course.date | date:'mediumDate'}}</p> <!-- Using date pipe to format date -->
+        <p [hidden]="!course.soldOut">Sold Out</p>  <!-- Property binding --> 
+        <img [ngStyle]="{'border': course.soldOut ? '2px solid red' : 'none'}" [src]="course.img" alt="{{course.name}}" width="100">
+        @if (course.price < 140) {
+            <div class="special-offer">Special Offer!</div>
+        }
+        @if (course.onSale){
+            <div class="sale-banner">On Sale!</div>
+        }
+        <button (click)="viewDetails(course.name)">View Details</button> <!-- Event binding --> 
+    </div>
+}
