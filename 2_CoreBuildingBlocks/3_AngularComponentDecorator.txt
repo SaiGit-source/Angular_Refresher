@@ -1,3 +1,44 @@
 Angular Component Decorator
 
 Angular components are the main building blocks
+
+Components have four parts:
+1. HTML template that defines UI for the component
+2. CSS styles to apply to the template
+3. TypeScript class that controls the component's behavior
+4. Component selector that tells Angular where to put the component in the DOM
+
+Common uses:
+1. Build whole pages for navigation
+2. Build reusable bit of UI
+3. We write components in the same way no matter how we use them
+
+
+Component decorator takes configuration object as its only argument. 
+The selector property tells Angular where to use the component in the DOM
+
+@Component({
+  selector: 'app-players',
+  templateUrl: './players.component.html',
+  styleUrls: ['./players.component.css']
+})
+
+try to have atleast one '-' in the selector and it is the convention  'app-players' to avoid collisions with standard HTML elements like button or input
+templateUrl: tells Angular which file to use as HTML for this component
+
+this also works
+template: '<h1>Hello World</h1>'
+
+we can use template or templateUrl but not at the same time
+
+styleUrls: is the array of files that define CSS styles. we can use any absolute or relative URL here
+
+style: ['.input-group { color: red; }']
+
+
+
+
+
+
+
+

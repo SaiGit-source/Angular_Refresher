@@ -1,0 +1,32 @@
+Angular Components are the main building blocks in all Angular apps
+
+you can't use Angular without Components
+
+  public players$: Observable<Player[] | undefined> = of(undefined);
+it has an initial value of Observable that returns undefined
+it's a type of promise but for data that returns more than once
+players$ : putting $ sign at the end of observable is a naming convention in Angular
+
+
+ constructor(
+    private api: ApiService
+  ) { }
+
+  this is the constructor for our Components class. this is where we inject dependencies and initialize code
+
+
+  public ngOnInit(): void {
+    this.players$ = this.api.getAllPlayers$();
+  }
+
+this is a lifecycle hook built into Angular. it is a way to tell Angular when to execute certain pieces of code
+
+getAllPlayers$() we use this method on our API Service to get all the players
+$ sign is not required but it makes it clear the service returns an Observable of some kind
+
+
+
+
+
+
+
