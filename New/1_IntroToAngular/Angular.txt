@@ -1,0 +1,57 @@
+Why should we use Angular?
+Angular is used to build web applications. It's a framework created by Google helps to create dynamic Single-page applications (SPAs)
+Use HTML variables with something called as Data binding
+Work with dependency injection
+Routing - connection of URL to a certain page
+Also handle forms
+
+
+Uses of Angular:
+Simple websites also complex enterprise applications
+
+Benefits:
+Angular gives your applications a lot of structure
+provides scalability you need
+
+Competitors of Angular: React and Vue
+
+Install npm then Angular CLI
+npm install -g @angular/cli
+installs Angular CLI globally in your machine
+
+node -v
+npm -v
+ng version
+
+Angular CLI       : 21.2.0
+Node.js           : 24.13.1
+Package Manager   : npm 11.8.0
+Operating System  : win32 x64
+
+
+create a new Angular project: ng new course-booking-system
+Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+cd .\course-booking-system\
+ng serve -o
+
+Opens page in http://localhost:4200/
+
+Angular CLI is a tool that helps us with scaffolding and managing Angular projects. Saves time by generating boilerplate code. Enforces Angular best practices
+
+Common commands:
+Create new projects: ng new
+Serve the app: ng serve
+Generate files: ng generate component or service or pipe etc
+Build for production: ng build
+
+
+CLI automatically updates configuration files and creates new folders. this helps avoids mistakes, work faster, stick to a consistent structure, works with best practices
+
+
+
+
+
+
+
+
+
