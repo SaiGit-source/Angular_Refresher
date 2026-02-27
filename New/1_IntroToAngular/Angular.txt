@@ -47,7 +47,7 @@ Build for production: ng build
 
 CLI automatically updates configuration files and creates new folders. this helps avoids mistakes, work faster, stick to a consistent structure, works with best practices
 
-
+Components are like building blocks of Angular application like Lego block
 
 
 

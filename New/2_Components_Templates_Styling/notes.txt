@@ -1,0 +1,61 @@
+Components:
+
+Components are like building blocks of Angular application like Lego piece
+
+Say your website has a Header, Main (List and elements in the list) and Footer. they all might be different Components
+
+Components are central elements of an Angular application
+They control a portion of the screen called the view
+They also handle logic and data for the view's functionality
+
+A component is a special TypeScript class that interacts with an HTML template to display information and handle user interactions
+These components help break UI into chunks. cleaner and easy to maintain code
+
+go to the course-booking-system folder then run 
+ng generate component courses-list
+
+We want to have a list of courses here: 
+To add a new course, i got to copy and paste it
+
+<div class="course-item">
+    <h3>Introducton to Angular</h3>
+    <p>This course covers the basics of Angular development.</p>
+    <p>$100</p>
+    <p>03-01-2026</p>
+    <button>View Details</button>
+</div>
+
+how do we add courses dynamically? Data binding
+Data binding is some sort of bridge that connects component's data and the HTML template
+it allows the view to reflect the underlying data model seemlessly
+
+Data binding is the process of connecting the data in our TypeScript class to our HTML template
+this ensures, when my data changes, the view updates automatically. 
+
+
+Two-way data binding: the two-way interaction makes our application dynamically respond without the need for DOM manipulation
+
+One-way data binding: the data flows from the component to the view or the HTML file
+Component ts file ===> View HTML file  ex: <h2>{{title}}</h2>
+
+Property binding: Allows us to set properties of HTML elements or directives based on component data
+Instructions for specific parts of the view based on what's happening in the component
+[property]="expression". it could be a property in the 'ts' file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

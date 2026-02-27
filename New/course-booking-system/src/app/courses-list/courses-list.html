@@ -1,0 +1,43 @@
+<h2>{{title}}</h2>
+<!-- This is a static version of the courses list. In a real application, you would likely use *ngFor to loop through the courses array and display each course dynamically.
+<div class="course-item">
+    <h3>Introducton to Angular</h3>
+    <p>This course covers the basics of Angular development.</p>
+    <p>$100</p>
+    <p>03-01-2026</p>
+    <button>View Details</button>
+</div>
+
+<div class="course-item">
+    <h3>Advanced Angular</h3>
+    <p>This course covers advanced concepts in Angular development.</p>
+    <p>$150</p>
+    <p>03-01-2026</p>
+    <button>View Details</button>
+</div>
+-->
+
+<div class="course-item">
+    <h3>{{courses[0].name}}</h3>
+    <p>{{courses[0].description}}</p>
+    <p>${{courses[0].price}}</p>
+    <p>{{courses[0].date | date}}</p>
+    <button>View Details</button>
+</div>
+
+
+<div class="course-item">
+    <h3>{{courses[1].name}}</h3>
+    <p>{{courses[1].description}}</p>
+    <p>${{courses[1].price}}</p>
+    <p>{{courses[1].date | date}}</p>
+    <button>View Details</button>
+</div>
+
+<div class="course-item">
+    <h3>{{courses[2].name}}</h3>
+    <p>{{courses[2].description}}</p>
+    <p>${{courses[2].price}}</p>
+    <p>{{courses[2].date | date}}</p>
+    <button>View Details</button>
+</div>
