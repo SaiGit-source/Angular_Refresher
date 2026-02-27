@@ -1,0 +1,53 @@
+Angular Modules:
+Represent a collection of files that work together, might include components, services, or pipes. 
+They help Angular figure out how things fit together
+
+
+From Angular v14+, we can use something called as StandAlone component lets you use files without assigning them to a module. StandAlone components are relatively new.
+
+Go to src/app/app.module.ts
+always use module.ts ending when using a module file
+Angular CLI does this for you when you generate new files using the command line tool. 
+Angular modules are always TypeScript classes and use the @NgModule decorator to declare a class as a Module
+Decorators are like metadata that tells Angular what your code should do and how to inject that code into rest of the application. 
+@NgModule decorator takes in a configuration object as its only argument. The declaration's property is an array of all the components, directives and pipes that belong to this module. In this example, we have only one file, AppComponent.  
+The 'imports' property is an array of all the external modules we want to make available inside this module's template. 
+
+@NgModule({
+  declaration=> [
+    AppComponent
+  ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    CommonModule,
+    HttpClientModule
+  ],
+
+AppRoutingModule => gives access to page navigation features
+BrowserModule => Low level infrastructure, required in all Angular projects
+CommonModule => it has all of Angular's built-in pipes and directives
+HttpClientModule => gives access to HTTP client service for making fetch requests
+
+
+Next config option is called   exports: [], => it's an array of all the code in this module we want to make available for use in other modules. 
+
+  providers: [], it is an array of all the code we want to make available in this module through Angular's dependency injection. This is different from importing a module for use in the template. As a general rule, we put modules in 'imports' array and things like Services in the 'providers' array.
+
+bootstrap: [AppComponent]  this property tells Angular which components to load when you launch your application. In our case, we load only one component that is AppComponent. 
+
+When using a module architecture, you must have at least one module in your project => root module that's the only place you should ever declare a bootstrap property
+All properties in module configuration is optional
+
+We export the module class itself 'export class AppModule { }'. Our module class is called 'AppModule' and it is an empty class, it tells Angular which components to load on App launch. 
+To launch application, we export module class here and import it into main.ts file import { AppModule } from './app/app.module';
+
+We pass AppModule into bootstrap module method   src/main.ts   platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err)); bootstrapModule does all work including loading our code into memory and displaying component in the dom. The bootstrap module function can take a configuration object as an optional second argument
+  
+
+
+
+
+
+
+

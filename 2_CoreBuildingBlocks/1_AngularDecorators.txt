@@ -1,0 +1,25 @@
+What are Decorators?
+Functions that return functions
+Supplies metadata, tells Angular what the code should do
+How it should inject that code into other parts of the application
+Decorators are marked using an @ symbol in front of the decorator name
+They are invoked at runtime and expect arguments to be passed either between the parenthesis or immediately after closing the parenthesis
+
+
+Common decorators:
+@NgModule() to define modules
+@Components to define components
+@Injectable() to define services
+@Pipe() to define pipes
+@Directive to define directives
+@Input() for data flowing into a component
+@Output for data flowing out of a component
+Input() and Output() to define properties that send and receive data from the dom. 
+
+official documentation: https://angular.io/docs
+
+Decorator Errors:
+Missing parenthesis, properties, property values, adding a semicolon at the end of decorator statement
+use 'ng build' and 'ng serve' command to check for errors
+
+

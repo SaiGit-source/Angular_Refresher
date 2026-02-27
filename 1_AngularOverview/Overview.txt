@@ -1,0 +1,23 @@
+Angular started life at Google as a side project to help employees build internal web apps. 
+What made Angular unique is, it focused on extending HTML markup with custom attributes and dynamic content, instead of using JavaScript to generate the HTML at runtime. It allowed to keep templates from controllers. Angular keeps HTML and JavaScript separate. 
+
+No matter how big the project is, the JavaScript framework should be stable and secure. Angular uses semantic versioning to track changes, and releases. Semantic versioning or SEM VER is both a strategy and a naming convention that helps you know exactly what to expect from each release. It lets everyone knows what to expect from each new release. There are always three types of Angular releases when using SEM VER: Major release, Minor release and Patch releases. Angular releases, Major release contain big new features, it is sometimes called a breaking change because you may need to learn new APIs, refactor code or update config files. Minor releases are usually small new features that are backwards-compatible with previous versions. Patch releases are low-risk fixes for bugs and security. NG update command upgrades all dependencies all at once.
+
+Angular is released under a permissive license called the MIT license. The license gives you and your team to use the software free of charge as long as you include the copyright notice and license info. 
+Angular was originally designed to build Single-Page Applications (SPA). SPAs are websites where content updates dynamically without the need to refresh the browser. It makes the website feel like native App experience. What makes Angular unique is, on extending HTML markup with custom attributes and dynamic content. It allowed developers to keep templates out of controllers.
+
+Angular comes with its own ecosystem of developer tools and workflow. Angular CLI is the official command-line tool for Angular projects, which is open-source and released under the MIT license. Usually, CLI version 15 works with Angular version 15. that makes it easy to upgrade all dependencies at once when needed.
+
+Five important commands
+ng build: to compile code and output files into a build directory.
+ng serve: compile code, launch a dev server, and watch for file changes
+ng generate: to add new files using Angular’s built-in boilerplates
+ng lint and ng test: to run Angular’s lint and unit testing tools
+
+Angular language service
+Tells code editors how to work with Angular code
+
+Angular Dev Tools is a browser extension that gives detailed debugging information in real time when running your application in a browser.
+
+Angular Schematics, which are collections of custom code to reuse across multiple projects. ng generate command uses Schematics under the hood to generate new files under the hood to populate new files with the correct boilerplate content. 
+

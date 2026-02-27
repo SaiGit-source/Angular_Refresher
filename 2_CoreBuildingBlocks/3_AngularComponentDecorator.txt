@@ -1,0 +1,3 @@
+Angular Component Decorator
+
+Angular components are the main building blocks
