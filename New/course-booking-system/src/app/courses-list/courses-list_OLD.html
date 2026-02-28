@@ -1,4 +1,4 @@
-<!-- <h2>{{title}}</h2> -->
+<h2>{{title}}</h2>
 <!-- This is a static version of the courses list. In a real application, you would likely use *ngFor to loop through the courses array and display each course dynamically.
 <div class="course-item">
     <h3>Introducton to Angular</h3>
@@ -60,14 +60,13 @@
 </div>
  -->
 
- <!--
 @for(course of courses; track course.id){
     <div class="course-item">
         <h3>{{course.name}}</h3>
         <p>{{course.description}}</p>
-        <p>{{course.price | currency:'USD'}}</p> 
-        <p>{{course.date | date:'mediumDate'}}</p> 
-        <p [hidden]="!course.soldOut">Sold Out</p>   
+        <p>{{course.price | currency:'USD'}}</p> <!-- Using currency pipe to format price -->
+        <p>{{course.date | date:'mediumDate'}}</p> <!-- Using date pipe to format date -->
+        <p [hidden]="!course.soldOut">Sold Out</p>  <!-- Property binding --> 
         <img [ngStyle]="{'border': course.soldOut ? '2px solid red' : 'none'}" [src]="course.img" alt="{{course.name}}" width="100">
         @if (course.price < 140) {
             <div class="special-offer">Special Offer!</div>
@@ -75,24 +74,6 @@
         @if (course.onSale){
             <div class="sale-banner">On Sale!</div>
         }
-        <button (click)="viewDetails(course.name)">View Details</button>  
-    </div>
-} -->
-
-
-<h2>{{title}}</h2>
-@if (wishList.length > 0) {
-    <div class="wishlist-banner">
-        <h3>Your Wishlist</h3>
-            @for(course of wishList; track course.id){
-                <span class="wishlist-item">{{course.name}}</span>
-            }
+        <button (click)="viewDetails(course.name)">View Details</button> <!-- Event binding --> 
     </div>
 }
-
-@for(course of courses; track course.id){ <!-- Parent-child component data communication -->
-    <app-course-card [course]="course" (courseBookedListener)="onCourseBooked($event)" (addWishlistListener)="onWishListAdded($event)"></app-course-card> <!-- Using course-card component -->  
-
-}
-
-<!-- (courseBookedListener) event-listening binding syntax -->

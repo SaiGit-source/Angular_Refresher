@@ -1,2 +1,24 @@
 Sending data across components
 
+Parent Child communication: when we have one component inside another component
+ng generate component course-card
+course-card will help us display course details in a neat and reusable card format
+
+The @Input Decorator: for communicating from the parent to the child. pass data down to child
+We can make our component dynamic instead of hard-coding, make our component reuable and flexible
+
+The purpose of the decorator is to mark a property as an input property, allowing data to flow from parent to child
+At Parent component, bind to the child's @Input property using property binding syntax, In child, use @Input to receive data
+
+@Output decorator: Child communicating back to Parent. we have to use @Output() on the child combined with event emitters
+@Output marks a property as an output property allowing child to emit events to parent. we need to specify a function in the parent to handle the event emitted from the child. 
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+
+    <div class="course-card">
+        <h3>{{course.name}}</h3>
+        <p>{{course.description}}</p>
+        <p>{{course.price | currency:'USD'}}</p> <!-- Using currency pipe to format price -->
+        <p>{{course.date | date:'mediumDate'}}</p> <!-- Using date pipe to format date -->
+        <p [hidden]="!course.soldOut">Sold Out</p>  <!-- Property binding --> 
+        <img [ngStyle]="{'border': course.soldOut ? '2px solid red' : 'none'}" [src]="course.img" alt="{{course.name}}" width="100">
+        @if (course.price < 140) {
+            <div class="special-offer">Special Offer!</div>
+        }
+        @if (course.onSale){
+            <div class="sale-banner">On Sale!</div>
+        }
+        <button (click)="onAddWishlist()">Add to Wishlist</button> <!-- Event binding -->
+        <button [disabled]="course.soldOut" (click)="onCourseBooked()">Book Course</button> <!-- Event binding --> 
+    </div>
