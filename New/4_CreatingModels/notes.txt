@@ -1,2 +1,23 @@
 Creating and using models
 
+Dara models are like contract or template for your data. Allows you to create own data types
+improves predictability, helps with early error detection
+
+We can create models using Angular CLI, or manually
+ng generate interface models/course --type=model
+
+
+export interface Course {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    date?: Date;
+    soldOut?: boolean;
+    img: string;
+    onSale?: boolean;
+}
+
+
+
+
