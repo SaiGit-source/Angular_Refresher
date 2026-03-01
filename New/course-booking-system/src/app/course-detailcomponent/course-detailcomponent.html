@@ -1,0 +1,13 @@
+<h2>Course details</h2>
+
+<hr />
+
+@if(course) {
+    <div>
+    <h3>{{course?.name}}</h3>
+    <p>{{course?.description}}</p>
+    <p>{{course?.price | currency:'USD'}}</p>
+    <p>{{course?.date | date:'mediumDate'}}</p>
+    <img [ngStyle]="{'border': course?.soldOut ? '2px solid red' : 'none'}" [src]="course?.img" alt="{{course?.name}}" width="100">
+    </div>
+}

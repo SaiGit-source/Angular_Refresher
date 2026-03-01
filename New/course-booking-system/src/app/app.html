@@ -1,1 +1,10 @@
-<app-courses-list></app-courses-list>
+<!-- <app-courses-list></app-courses-list> -->
+<!--<app-course-detailcomponent></app-course-detailcomponent> -->
+
+<nav>
+    <a routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courses</a> <!-- Router link to navigate to courses list, with active class applied when this route is active -->           
+    <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About</a>
+</nav>
+
+<router-outlet></router-outlet> <!-- Router outlet to render components based on the current route -->
+

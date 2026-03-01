@@ -1,0 +1,21 @@
+Routing
+
+Setting up Routing
+Routing is connecting certain URL to certain component. 
+
+We define routes in src/app/app.routes.ts file
+
+{ path: '', redirectTo: '/courses', pathMatch: 'full' }  this is sending every baseUrl directly to courses
+{ path: 'courses', component: CoursesList } maps to the CoursesList component
+even the first one brings indirectly to CoursesList
+
+{ path: 'courses/:id', component: CourseDetailcomponent} this one routes to CourseDetailcomponent
+
+Route parameters and Query parameters:
+Send information along with the routes: 2 ways: route and query parameters
+Route parameters: route takes a parameter /courses/:id      this.router.navigate(['/courses', id]);
+Query parameters: /courses?description=frontend
+for example, in the url i can add a query parameter: http://localhost:4200/courses?description=reactive it pulls only RxJs course
+
+
+

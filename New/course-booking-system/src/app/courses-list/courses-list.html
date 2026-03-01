@@ -90,9 +90,25 @@
     </div>
 }
 
-@for(course of courses; track course.id){ <!-- Parent-child component data communication -->
-    <app-course-card [course]="course" (courseBookedListener)="onCourseBooked($event)" (addWishlistListener)="onWishListAdded($event)"></app-course-card> <!-- Using course-card component -->  
-
+<!-- Parent-child component data communication -->
+<!-- Using course-card component -->
+@for(course of courses; track course.id){ 
+    
+    <app-course-card 
+    [course]="course" 
+    (courseBookedListener)="onCourseBooked($event)" 
+    (addWishlistListener)="onWishListAdded($event)">
+    </app-course-card> 
 }
 
+<!-- using standard *ngFor instead -->
+ <!--
+<div *ngFor="let course of courses; let i = index"> 
+    <app-course-card 
+    [course]="course" 
+    (courseBookedListener)="onCourseBooked($event)" 
+    (addWishlistListener)="onWishListAdded($event)">
+    </app-course-card>
+</div>
+-->
 <!-- (courseBookedListener) event-listening binding syntax -->

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule, CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
 import { Course } from '../models/course.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,6 +23,10 @@ export class CourseCard {
     alert(`Viewing details for course: ${courseName}`);
   } */
 
+    constructor(private router: Router) {
+  } 
+
+
   onCourseBooked(): void {
     // Logic to book the course, e.g., call an API to book the course, show confirmation message, etc.
     alert(`Course booked from Child: ${this.course?.name}`);
@@ -34,6 +39,12 @@ export class CourseCard {
     alert(`Course added to wishlist from Child: ${this.course?.name}`);
     this.addWishlistListener.emit(this.course); // Emit event to notify parent component about adding to wishlist
     // the data that child is sending is this.course.name, which is the name of the course that was added to the wishlist. The parent component can then use this information to update its state or perform any necessary actions related to the wishlist.
+  }
+
+  gotoDetails(id?: number): void {
+    if (id) {
+      this.router.navigate(['/courses', id]);
+    }
   }
 
 }

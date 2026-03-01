@@ -1,0 +1,27 @@
+nav {
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #444;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav a.active {
+    background-color: #555;
+    color: white;
+}   
+
+
+nav a:hover {
+    background-color: #555;
+}

@@ -1,2 +1,37 @@
 Services and HTTP requests
 
+Services handle a lot of heavy-lifting like fetching data from the server
+ng generate service services/courseService
+
+constructor(private courseService: CourseService)
+
+better to keep it in Data storage instead of hard-coding
+
+private courses: Course[] = [
+    { id: 1, name: 'Angular Basics', description: 'Learn the basics of Angular.', price: 100, date: new Date('2024-07-01'), soldOut: true, img: 'AngularLogo.png', onSale: false },
+    { id: 2, name: 'Advanced Angular', description: 'Deep dive into Angular features.', price: 150, date: new Date('2024-08-01'), soldOut: false, img: 'AngularLogo.png', onSale: true },
+    { id: 3, name: 'Angular Forms', description: 'Master forms in Angular.', price: 120, date: new Date('2024-09-01'), soldOut: true, img: 'AngularLogo.png', onSale: false },
+    { id: 4, name: 'RxJs', description: 'Learn reactive programming with RxJs.', price: 130, date: new Date('2024-10-01'), soldOut: false, img: 'RxJsLogo.jpg', onSale: true },
+  ];
+  
+
+  Now we have a backend
+  courses-backend> node .\server.js
+
+  add in app.config.ts: import { provideHttpClient} from '@angular/common/http';
+
+When we make an HTTP request, it returns an observable because it is an Async process. it's like subscribing to newsletter, we get an update when there is new data available
+
+We have injected HttpClient into CourseService and CourseService into CoursesList component
+
+How do we get Service into a component? Dependency injection. 
+
+constructor(private courseService: CourseService) => Angular creates a single instance or singleton of the courseService for the entire application
+
+Cross-component communication: Different components need to communicate with each other, not necessarily directly connected. 
+Database is one option, other is store a shared data in a service. 
+
+if you want to share a wishlist between multiple components, we can add it to the CourseService. this pattern reduces the need for excessive @Input and @Output binding between components
+
+
+
