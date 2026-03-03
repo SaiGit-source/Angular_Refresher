@@ -1,3 +1,24 @@
 Angular Forms
 
+Two approaches: Template-driven forms, Reactive forms
+For demo, we will focus on Reactive forms. Preferred for more complex scenarios. We get explicit control over data flow and validation. 
+
+Template-driven forms are built using Angular derivatives directly in the HTML Template. Great for simple forms, however, they hide some of the magic behind the scenes
+
+Reactive forms are defined and managed entirely in TypeScript. It controls more control of form's data and validation rules
+ng generate component sign-up-form
+
+Once we create the form, we add routing to this in app.routes.ts then app.html
+Always start the courses-backed server npm start
+
+
+
+
+
+
+
+
+
+
+
 
