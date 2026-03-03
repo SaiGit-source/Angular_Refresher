@@ -3,6 +3,7 @@ import { Course } from '../models/course.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
+import { Student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root',
@@ -43,6 +44,10 @@ export class CourseService {
   // GET course by id
   getCourseById(id: number): Observable<Course> {
     return this.http.get<Course>(`${this.baseUrl}/courses/${id}`); // Make an HTTP GET request to fetch a course by id from the backend API
+  }
+
+  addStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(`${this.baseUrl}/students`, student); // Make an HTTP POST request to add a new student to the backend API
   }
 
 

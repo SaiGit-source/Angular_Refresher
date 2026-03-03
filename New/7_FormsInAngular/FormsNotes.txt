@@ -11,6 +11,11 @@ ng generate component sign-up-form
 Once we create the form, we add routing to this in app.routes.ts then app.html
 Always start the courses-backed server npm start
 
+Form validation ensures uses dont submit incomplete and incorrect data
+once we submit the form, the Backend will deal with it
+
+
+
 
 
 

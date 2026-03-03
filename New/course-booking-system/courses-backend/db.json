@@ -39,7 +39,38 @@
       "soldOut": false,
       "img": "RxJsLogo.jpg",
       "onSale": true
+    },
+    {
+      "id": 5,
+      "name": "RxJs Advanced",
+      "description": "More advanced async data streaming",
+      "price": 100,
+      "date": "2026-05-20",
+      "soldOut": false,
+      "img": "RxJsLogo.jpg",
+      "onSale": false
     }
   ],
-  "students": []
+  "students": [
+    {
+      "id": 1,
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "enrolledCourseIds": [
+        "2"
+      ],
+      "registrationDate": "2026-03-03T18:23:27.873Z",
+      "enrolledCourses": []
+    },
+    {
+      "id": 2,
+      "name": "bbk",
+      "email": "bbk@gmail.com",
+      "enrolledCourseIds": [
+        "4"
+      ],
+      "registrationDate": "2026-03-03T18:24:27.847Z",
+      "enrolledCourses": []
+    }
+  ]
 }

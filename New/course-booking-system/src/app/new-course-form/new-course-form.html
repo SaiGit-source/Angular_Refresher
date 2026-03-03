@@ -1,0 +1,70 @@
+<h2>Add a new course</h2>
+
+<form [formGroup]="newCourseForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input id="title" formControlName="name" type="text" />
+        @if (name?.invalid && (name?.dirty || name?.touched)) {
+        <div class="error">
+        @if (name?.errors?.['required']) {
+                <small>Title is required.</small>
+        }
+        @if (name?.errors?.['minlength']) {
+                <small>Title must be at least 3 characters.</small>
+        }
+        </div>
+        } 
+        <label for="description">Description:</label>
+        <textarea
+        id="description"
+        formControlName="description"
+        class="description-box"
+        rows="3"
+        ></textarea>
+        @if (description?.invalid && (description?.dirty || description?.touched)) {
+        <div class="error">
+            @if (description?.errors?.['required']) {
+                <small>Description is required.</small>
+            }
+            @if (description?.errors?.['minlength']) {
+                <small>Description must be at least 10 characters.</small>
+            }
+        </div>
+        }
+        <label for="price">Price:</label>
+        <input id="price" formControlName="price" type="number" />
+        @if (price?.invalid && (price?.dirty || price?.touched)) {
+        <div class="error">
+            @if (price?.errors?.['required']) {
+                <small>Price is required.</small>
+            }
+            @if (price?.errors?.['min']) {
+                <small>Price must be a positive number.</small>
+            } 
+        </div>
+        }  
+        <label for="date">Date:</label>
+        <input id="date" formControlName="date" type="date" />
+        @if (date?.invalid && (date?.dirty || date?.touched)) {
+        <div class="error">
+            @if (date?.errors?.['required']) {
+                <small>Date is required.</small>
+            }
+            @if (date?.errors?.['invalidDate']) {
+                <small>Date must be a valid date.</small>
+            }
+        </div>
+        }
+        <label for="img">Image URL:</label>
+        <input id="img" formControlName="img" type="text" />
+        <label for="onSale">On Sale:</label>
+        <input id="onSale" formControlName="onSale" type="checkbox" />
+    </div>
+    <button type="submit" [disabled]="newCourseForm.invalid">Add Course</button>
+    @if (submissionSuccess) {
+        <p class="success-message">You have successfully added a new course!</p>
+    }           
+    @if (submissionError) {
+        <p class="error-message">An error occurred while adding the course. {{submissionError}} </p>
+    }
+</form>

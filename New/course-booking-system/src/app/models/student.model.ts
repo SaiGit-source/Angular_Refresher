@@ -6,3 +6,5 @@ export interface Student {
     phoneNumber?: string; // Optional phone number
     registrationDate?: Date; // Date when the student registered
 }
+
+

@@ -13,6 +13,7 @@ input, select {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: #ac9494;
 }
 
 .error {
