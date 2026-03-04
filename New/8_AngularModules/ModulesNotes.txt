@@ -1,5 +1,88 @@
 Angular modules
 
+Modules are great for structuring much bigger applications. Modules are like folders or containers that keep your code organized
+
+The group related to Components, Services, Directives, Pipes
+
+it will make your app easier to scale, maintain, and lazy load
+
+Defined using @NgModule decorator, fundamental building blocks of Angular application
+
+Better organization by grouping related functionalities together like all admin or user-related features,
+It promotes reusing by sharing common components or pipes by sharing across different parts of your app or even across multiple projects,
+It has the potential to improve performance by loading modules only when they are needed rather than the entire app at once
+
+Declarations:
+They are the list of components, directives and pipes that belong to this module
+
+Imports are other modules whose exported classes are needed by component templates, declared in this module like common module and forms module
+
+Exports are subset of declarations that should be visible and usable in the component templates of other modules
+
+Providers are services available app-wide through the module. These services become available to all parts of the app
+
+Bootstrap is the root component that Angular creates and inserts into index.html, host webpage
+
+Feature modules encapsulate related functionalities like admin, user, dashboard etc
+
+Shared modules contain common components, directives and pipes that might be used across many feature modules
+
+Core modules: house singleton services and global configurations that are used application-wide
+
+We are going to create an Admin module. it handles tasks like viewing all students, adding courses. we will generate this module along with its routing configuration.
+ng generate module features/admin --routing
+
+generate a component to list all students for our Admin panel
+
+
+
+Feature modules -> Admin module here groups specific functionalities
+
+Shared modules => for components that are used everywhere throught the app like header components, footer components, common directives
+
+Core modules => provides singleton services or global settings. 
+Shared modules avoids repeating common code
+Core modules ensure only global services are instantiated only once for things like authentication or global configuration
+
+By default we add {providedIn: 'root'} setting. Angular automatically makes the service available as singleton throughout the app
+
+Why we want to make them singleton by providing in the 'root'?
+Whereever we inject the service gets the same instance or same singleton instance. this is perfect for things like data fetching or shared state
+Automatic tree shaking => that means unused services (if they are not injected anywhere) will be removed or pruned by Angular
+No extra boilerplate code
+
+When would we create a custom core module?
+In large application, we want to organize our services and functionalities
+Core module is imported only once in the App module
+Core service, authentication service should have only a single instance
+
+Create an Admin dashboard within the Admin module => central hub for admins to View students and Add courses
+ng generate component features/admin/dashboard
+
+For Circular chain error: npm install -g madge
+npx madge --circular src/
+
+npx madge --circular --extensions ts .
+
+
+Next topics:
+1. Advanced Angular
+2. Testing Angular applications
+3. Accessibility
+4. Working with material design
+5. Backend development
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

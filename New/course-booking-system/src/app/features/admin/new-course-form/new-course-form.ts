@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CourseService } from '../services/course-service';
-import { StudentFactory } from '../student-factory';
-import { Course } from '../models/course.model';
+import { CourseService } from '../../../services/course-service';
+import { Course } from '../../../models/course.model';
 import { CourseFactory } from './course-factory';
 
 @Component({
@@ -11,6 +10,7 @@ import { CourseFactory } from './course-factory';
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './new-course-form.html',
   styleUrl: './new-course-form.css',
+  standalone: true
 })
 export class NewCourseForm implements OnInit {
   newCourseForm!: FormGroup;

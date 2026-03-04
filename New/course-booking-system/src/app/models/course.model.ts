@@ -1,6 +1,6 @@
 export interface Course {
     id: number;
-    name?: string;
+    name: string;
     description?: string;
     price: number;
     date?: Date;

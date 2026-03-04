@@ -50,5 +50,18 @@ export class CourseService {
     return this.http.post<Student>(`${this.baseUrl}/students`, student); // Make an HTTP POST request to add a new student to the backend API
   }
 
+  getStudents(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.baseUrl}/students`); // Make an HTTP GET request to fetch all students from the backend API
+  }
+
+  getEnrolledCourses(students: Student[]): Observable<Course[]> {    const enrolledCourseIds: number[] = [];
+    students.forEach(student => {
+      enrolledCourseIds.push(...student.enrolledCourseIds);
+    });
+    return this.getCourses().pipe(
+      map(courses => courses.filter(course => enrolledCourseIds.includes(course.id)))
+    );
+  }
+
 
 }

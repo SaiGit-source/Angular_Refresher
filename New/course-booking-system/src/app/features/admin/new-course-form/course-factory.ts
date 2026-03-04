@@ -1,4 +1,4 @@
-import { Course } from "../models/course.model";
+import { Course } from "../../../models/course.model";
 
 export class CourseFactory {
   private static currentId = 5; // Starting ID for new courses (assuming existing courses have IDs 1-4)
